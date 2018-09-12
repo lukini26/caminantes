@@ -1,14 +1,16 @@
 {
-  "name": "authenticationIntro",
+  "name": "caminantesgo",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/DDCSLearning/authenticationIntro.git",
-  "author": "DanielDeutsch <deudan1010@gmail.com>",
-  "license": "none",
+  "repository": "https://github.com/lukini26/caminantes .git",
+  "author": "Lukni",
+  "license": "MIT",
   "scripts": {
     "start": "node app",
     "watch": "nodemon ./app.js && mongod"
   },
+  "engines": {
+    "node": "8.9.1"},
   "dependencies": {
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.1",

@@ -1,4 +1,6 @@
 var express = require('express');
+const path = require('path')
+const PORT = process.env.PORT || 5000
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
@@ -48,6 +50,7 @@ app.use(function (req, res, next) {
 //view engine set
 app.set('views', './views') ;
 app.set('view engine', 'pug') ;
+app.use(express.static(path.join(__dirname, './public')));
 
 
 
@@ -62,6 +65,6 @@ app.use(function (err, req, res, next) {
 
 
 // listen on port 3000
-app.listen(3000, function () {
-  console.log('Express app listening on port 3000');
+app.listen(PORT, function () {
+  console.log('Express app listening on ',PORT);
 });

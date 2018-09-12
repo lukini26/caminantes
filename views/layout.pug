@@ -2,11 +2,14 @@ doctype html
 html
   head
     title= `${title}`
-    link(rel='stylesheet', href='/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/css/styles.css')
+    link(rel='stylesheet', type='text/css', href='/templateLogReg/css/materialize.min.css')
+    link(rel='stylesheet',type='text/css', href='/templateLogReg/css/styles.css')
+    link(rel='stylesheet',type='text/css', href='/templateLogReg/css/materialize.css')
+    script(src="https://code.jquery.com/jquery-2.1.1.min.js")
+    script(type="text/javascript" src="js/materialize.min.js")
 
-  body
-    div.container.listing-reg
-      h1 My Amazing App
+    body
+      div.container.listing-reg
+        h1 My Amazing App
 
-      block content
+        block content

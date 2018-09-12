@@ -76,6 +76,11 @@ router.get('/list', (req, res) => {
     .catch(() => { res.send('Sorry! Something went wrong.'); });
 });
 
+router.get('/test',(req,res)=>{
+res.render('test',{title: 'test'});
+
+})
+
 
 
 
@@ -91,7 +96,8 @@ router.get('/profile', function (req, res, next) {
           err.status = 400;
           return next(err);
         } else {
-          return res.send('<h1>Name: </h1>' + user.username + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/logout">Logout</a>')
+          return res.send('<h1>Name: </h1>' + user.username + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/logout">Logout</a>'
+        +'<br><a type="button" href="/list">Listado de Usuarios</a>')
         }
       }
     });
