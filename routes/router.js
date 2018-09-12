@@ -32,6 +32,7 @@ router.post('/', function (req, res, next) {
       passwordConf: req.body.passwordConf,
       pokeid: req.body.pokeid, 
       team: req.body.team , 
+      nomape: req.body.nomape
     }
 
     User.create(userData, function (error, user) {
@@ -69,8 +70,8 @@ router.post('/', function (req, res, next) {
 
 router.get('/list', (req, res) => {
   User.find()
-    .then((user) => {
-      res.render('list', { title: 'Listing registrations', user });
+    .then((users) => {
+      res.render('list', { title: 'users', users : users });
     })
     .catch(() => { res.send('Sorry! Something went wrong.'); });
 });
@@ -90,7 +91,7 @@ router.get('/profile', function (req, res, next) {
           err.status = 400;
           return next(err);
         } else {
-          return res.ren('<h1>Name: </h1>' + user.username + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/logout">Logout</a>')
+          return res.send('<h1>Name: </h1>' + user.username + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/logout">Logout</a>')
         }
       }
     });

@@ -3,14 +3,19 @@ extends layout
 
 block content
 
-  if users.length
+  if users
     table
       tr
-        th Name
-        th Email
+        th Usuario
+        th PokeID
+        th Team
+        th Nombre y Apellido
       each user in users
         tr
-          td= user.pokeid
-          td= user.email
+          td= user.username
+          td= user.pokeid          
+          td= user.team
+          td= user.nomape
+          
   else
     p No registrations yet :(

@@ -2,6 +2,12 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
 var UserSchema = new mongoose.Schema({
+  nomape:{
+    type: String,
+    unique: true,
+    required: true,
+    trim: true
+  },
   email: {
     type: String,
     unique: true,
