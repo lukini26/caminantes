@@ -77,7 +77,7 @@ router.get('/list', (req, res) => {
 });
 
 router.get('/test',(req,res)=>{
-res.render('test',{title: 'test'});
+res.render('profile',{title: 'test'});
 
 })
 
@@ -93,11 +93,13 @@ router.get('/profile', function (req, res, next) {
       } else {
         if (user === null) {
           var err = new Error('Not authorized! Go back!');
-          err.status = 400;
+          err.status = 400; 
           return next(err);
         } else {
-          return res.send('<h1>Name: </h1>' + user.username + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/logout">Logout</a>'
-        +'<br><a type="button" href="/list">Listado de Usuarios</a>')
+          return res.render('profile' , { uteam: user.team , uemail: user.email , uname: user.username , uid: user.pokeid} )
+          
+          //('<h1>Name: </h1>' + user.username + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/logout">Logout</a>'
+        //+'<br><a type="button" href="/list">Listado de Usuarios</a>')
         }
       }
     });
