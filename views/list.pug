@@ -1,33 +1,32 @@
-head
-  link(href='https://fonts.googleapis.com/icon?family=Material+Icons',type='text/css', rel='stylesheet') 
-  link(href='templateLogReg/css/materialize.css', type='text/css', rel='stylesheet' media='screen,projection')
-  link(href='templateLogReg/css/style.css' ,type='text/css', rel='stylesheet' media='screen,projection')
-  script(src='https://code.jquery.com/jquery-2.1.1.min.js')
-  script(src='templateLogReg/js/materialize.js')
-  script(src='templateLogReg/js/init.js')
-  link(rel="stylesheet",type='text/css', href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
-  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+extends profile.pug
+
+  
 
 
-block content
-.container
-  .row
-    .col-xl-12
+block ttt
+  
+    .row
+      .col-xl-12
 
-    if users
-      table.table
-        
-          tr
-            th Usuario
-            th PokeID
-            th Team
-            th Nombre
-            
-            each user in users
-              tr
-                td= user.username
-                td= user.pokeid          
-                td= user.team
-                td= user.nomape
-                
+      if users
+        table.table
+          
+            tr
+              th Usuario
+              th PokeID
+              th Team
+              th Nombre
+              
+              each user in users
+                tr
+                  td= user.username
+                  td= user.pokeid          
+                  td= user.team
+                  td= user.nomape
+                     
+                     
+
+
+
+
+                  

@@ -24,25 +24,24 @@ case team
 
   
 body
-block content
   
   nav(class = color , role = 'navigation')
     img.img-responsive#logo-container.brand-logo.center(src="images/logo.png", style={height:'20px', weight:'30px',margin:'15px'})
     ul.right.hide-on-med-and-down
      li
-       a.sedevan-trigger(id="SideNave") Navbar Link
+       a.sedevan-trigger(id="SideNave")
         
     a.sidenav-trigger(id = "SideNav")
       i.material-icons menu
 
-  ul.sidenav.table-of-contents-fixed(id="slide-out")
+  ul.sidenav.table-of-content.sidenav-fixed(id="slide-out")
     li
     .user-view
-      .background
-        img(src=backg)
-      a(href='#user')
+      .background(class = color)
+        
+      a(href='/profile')
         img.circle(src=poke)
-      a(href='#name')
+      a(href='/profile')
         span.white-text.name=uname
       a(href='#email')
         span.white-text.email=team
@@ -57,13 +56,19 @@ block content
     li
       a.subheader=uemail
     li
-      a.waves-effect(href='#!') Third Link With Waves
+      a.waves-effect(href='https://wa.me/543415324611') Sugerencias por whatsapp!
   a.sidenav-trigger(href="#", data-target="slide-out")
     i(class="material-icons")
-row.right
-  a(class="twitter-timeline", data-lang="es",style={width:'100% !important'},
-  data-width="auto", data-height="350",
-  data-link-color="#FAB81E", href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw") 
+block ttt
+  row.center
+    h3 hola como va?
+    h10 esto es una version de prueba si le das a lista de usuarios 
+    h10 vas a poder ver todos los usuarios registrados te agradeceria que me mandes sugerencias y me digas que te parece hasta ahora ,saludos!
+  row.right
+    a(class="twitter-timeline", data-lang="es",style={width:'100% !important'},
+    data-width="auto", data-height="350",
+    data-link-color="#FAB81E", href="https://twitter.com/nidospokemongo?ref_src=twsrc%5Etfw") 
+ 
 
 
 
