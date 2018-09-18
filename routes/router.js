@@ -68,13 +68,37 @@ router.post('/', function (req, res, next) {
 
 //custom
 
-router.get('/list', (req, res) => {
-  User.find()
-    .then((users) => {
-      res.render('list', { title: 'users', users : users });
-    })
-    .catch(() => { res.send('Sorry! Something went wrong.'); });
-});
+router.get('/list', (req, res) =>{
+    User.findById(req.session.userId)
+      .exec(function (error, user) {
+        if (error) {
+          return next(error);
+        } else {
+          if (user === null) {
+            var err = new Error('Not authorized! Go back!');
+            err.status = 400; 
+            return next(err);
+          } else { User.find()
+            .then((users) => {
+              res.render('list', { title: 'users', users : users,team: user.team , uemail: user.email , uname: user.username , uid: user.pokeid});
+            })
+              
+          }
+        }
+      });
+  }
+  
+)
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+
 
 router.get('/test',(req,res)=>{
 res.render('profile',{title: 'test'});
@@ -104,8 +128,6 @@ router.get('/profile', function (req, res, next) {
       }
     });
 });
-router.get('/list', function (req, res) {
-  res.send('listado!');})
   
 
 

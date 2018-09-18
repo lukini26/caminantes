@@ -24,7 +24,6 @@ case team
 
   
 body
-block content
   
   nav(class = color , role = 'navigation')
     img.img-responsive#logo-container.brand-logo.center(src="images/logo.png", style={height:'20px', weight:'30px',margin:'15px'})
@@ -40,9 +39,9 @@ block content
     .user-view
       .background(class = color)
         //-img(src=backg)
-      a(href='#user')
+      a(href='/profile')
         img.circle(src=poke)
-      a(href='#name')
+      a(href='/profile')
         span.white-text.name=uname
       a(href='#email')
         span.white-text.email=team
@@ -60,10 +59,12 @@ block content
       a.waves-effect(href='#!') Third Link With Waves
   a.sidenav-trigger(href="#", data-target="slide-out")
     i(class="material-icons")
+block content
 row.right
   a(class="twitter-timeline", data-lang="es",style={width:'100% !important'},
   data-width="auto", data-height="350",
-  data-link-color="#FAB81E", href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw") 
+  data-link-color="#FAB81E", href="https://twitter.com/nidospokemongo?ref_src=twsrc%5Etfw") 
+ 
 
 
 
